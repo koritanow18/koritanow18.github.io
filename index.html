@@ -6,13 +6,14 @@
   <title>korita — Coming Soon</title>
   <style>
     :root{
-      --pink1: #ec4899;
-      --pink2: #f472b6;
-      --blue-dk: #0b1220;
-      --blue-acc: #0f172a;
+      --pink1: #F0928F;      /* main pink provided */
+      --pink2: #F7B9B7;      /* softer pink for gradient */
+      --blue-dk: #1A2160;    /* main dark blue provided */
+      --blue-acc: #0e153e;   /* deeper blue for gradient */
       --white: #ffffff;
       --max-width: 1100px;
     }
+
     html,body{
       height:100%;
       margin:0;
@@ -21,30 +22,119 @@
       -moz-osx-font-smoothing:grayscale;
       background: #000;
     }
-    .split { display:flex; height:100vh; width:100%; align-items:center; justify-content:center; position:relative; overflow:hidden; }
-    .half { flex:1 1 50%; min-width:50%; height:100%; display:flex; align-items:center; justify-content:center; position:relative; }
-    .left { background: linear-gradient(160deg, var(--pink1), var(--pink2)); }
-    .right { background: linear-gradient(160deg, var(--blue-dk), var(--blue-acc)); }
-    .center {
-      position: absolute; left:50%; transform: translateX(-50%);
-      display:flex; flex-direction:column; align-items:center; gap:18px;
-      width: min(calc(var(--max-width) - 40px), 92%); padding: 28px; border-radius: 16px;
-      box-shadow: 0 20px 50px rgba(2,6,23,0.5);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      z-index:10; text-align:center;
+
+    .split {
+      display:flex;
+      height:100vh;
+      width:100%;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
     }
-    .brand { font-weight:800; letter-spacing: -0.02em; line-height:1; font-size: clamp(48px, 10vw, 120px); display:flex; align-items:center; justify-content:center; position:relative; }
-    .brand .kor { padding: 8px 18px; border-radius: 10px 0 0 10px; color: var(--blue-dk); display:inline-block; transform: translateX(-6px); position:relative; z-index:2; background:transparent; }
-    .brand .ita { padding: 8px 18px; border-radius: 0 10px 10px 0; color: var(--white); display:inline-block; transform: translateX(6px); position:relative; z-index:2; background:transparent; }
-    .niche { font-size: clamp(14px, 2vw, 18px); color: rgba(255,255,255,0.9); margin-top:6px; text-transform:uppercase; letter-spacing: 0.18em; font-weight:600; }
-    .coming { font-size: clamp(12px, 1.6vw, 14px); color: rgba(255,255,255,0.85); margin-top:4px; font-weight:500; letter-spacing:0.18em; }
-    .meta { margin-top:10px; font-size:12px; color: rgba(255,255,255,0.6); }
+
+    .half {
+      flex:1 1 50%;
+      min-width:50%;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
+
+    .left {
+      background: linear-gradient(160deg, var(--pink1), var(--pink2));
+    }
+
+    .right {
+      background: linear-gradient(160deg, var(--blue-dk), var(--blue-acc));
+    }
+
+    .center {
+      position: absolute;
+      left:50%;
+      transform: translateX(-50%);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:18px;
+      width: min(calc(var(--max-width) - 40px), 92%);
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(2,6,23,0.45);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      z-index:10;
+      text-align:center;
+    }
+
+    .brand {
+      font-weight:800;
+      letter-spacing: -0.02em;
+      line-height:1;
+      font-size: clamp(48px, 10vw, 120px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
+
+    .brand .kor {
+      padding: 8px 18px;
+      border-radius: 10px 0 0 10px;
+      color: var(--blue-dk); /* dark-blue text on pink side */
+      display:inline-block;
+      transform: translateX(-6px);
+      position:relative;
+      z-index:2;
+      background:transparent;
+    }
+
+    .brand .ita {
+      padding: 8px 18px;
+      border-radius: 0 10px 10px 0;
+      color: var(--white); /* white text on blue side */
+      display:inline-block;
+      transform: translateX(6px);
+      position:relative;
+      z-index:2;
+      background:transparent;
+    }
+
+    .niche {
+      font-size: clamp(14px, 2vw, 18px);
+      color: rgba(255,255,255,0.92);
+      margin-top:6px;
+      text-transform:uppercase;
+      letter-spacing: 0.18em;
+      font-weight:600;
+    }
+
+    .coming {
+      font-size: clamp(12px, 1.6vw, 14px);
+      color: rgba(255,255,255,0.85);
+      margin-top:4px;
+      font-weight:500;
+      letter-spacing:0.18em;
+    }
+
+    .meta {
+      margin-top:10px;
+      font-size:12px;
+      color: rgba(255,255,255,0.65);
+    }
+
     @media (max-width:720px){
       .center { padding:20px; }
       .brand { font-size: clamp(36px, 14vw, 64px); }
       .brand .kor, .brand .ita { padding:6px 12px; }
       .niche { font-size:13px; }
     }
+
+    /* subtle text shadows for contrast */
+    .brand .kor { text-shadow: 0 1px 0 rgba(255,255,255,0.04); }
+    .brand .ita { text-shadow: 0 1px 0 rgba(0,0,0,0.12); }
+
   </style>
 </head>
 <body>
@@ -65,4 +155,3 @@
   </div>
 </body>
 </html>
-
