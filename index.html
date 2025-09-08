@@ -1,198 +1,68 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>korita — Coming Soon</title>
+  <style>
+    :root{
+      --pink1: #ec4899;
+      --pink2: #f472b6;
+      --blue-dk: #0b1220;
+      --blue-acc: #0f172a;
+      --white: #ffffff;
+      --max-width: 1100px;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      background: #000;
+    }
+    .split { display:flex; height:100vh; width:100%; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+    .half { flex:1 1 50%; min-width:50%; height:100%; display:flex; align-items:center; justify-content:center; position:relative; }
+    .left { background: linear-gradient(160deg, var(--pink1), var(--pink2)); }
+    .right { background: linear-gradient(160deg, var(--blue-dk), var(--blue-acc)); }
+    .center {
+      position: absolute; left:50%; transform: translateX(-50%);
+      display:flex; flex-direction:column; align-items:center; gap:18px;
+      width: min(calc(var(--max-width) - 40px), 92%); padding: 28px; border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(2,6,23,0.5);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      z-index:10; text-align:center;
+    }
+    .brand { font-weight:800; letter-spacing: -0.02em; line-height:1; font-size: clamp(48px, 10vw, 120px); display:flex; align-items:center; justify-content:center; position:relative; }
+    .brand .kor { padding: 8px 18px; border-radius: 10px 0 0 10px; color: var(--blue-dk); display:inline-block; transform: translateX(-6px); position:relative; z-index:2; background:transparent; }
+    .brand .ita { padding: 8px 18px; border-radius: 0 10px 10px 0; color: var(--white); display:inline-block; transform: translateX(6px); position:relative; z-index:2; background:transparent; }
+    .niche { font-size: clamp(14px, 2vw, 18px); color: rgba(255,255,255,0.9); margin-top:6px; text-transform:uppercase; letter-spacing: 0.18em; font-weight:600; }
+    .coming { font-size: clamp(12px, 1.6vw, 14px); color: rgba(255,255,255,0.85); margin-top:4px; font-weight:500; letter-spacing:0.18em; }
+    .meta { margin-top:10px; font-size:12px; color: rgba(255,255,255,0.6); }
+    @media (max-width:720px){
+      .center { padding:20px; }
+      .brand { font-size: clamp(36px, 14vw, 64px); }
+      .brand .kor, .brand .ita { padding:6px 12px; }
+      .niche { font-size:13px; }
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;korita — Coming Soon&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>:root{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--pink1: #ec4899;<span class="Apple-converted-space">      </span>/* bright pink */</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--pink2: #f472b6;<span class="Apple-converted-space">      </span>/* lighter pink (for subtle gradient) */</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--blue-dk: #0b1220;<span class="Apple-converted-space">    </span>/* deep navy */</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--blue-acc: #0f172a; <span class="Apple-converted-space">  </span>/* alternate dark blue */</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--white: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--glass: rgba(255,255,255,0.06);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--max-width: 1100px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>html,body{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height:100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin:0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: Inter, ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>-webkit-font-smoothing:antialiased;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>-moz-osx-font-smoothing:grayscale;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: #000; /* fallback */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.split {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display:flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height:100vh;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width:100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items:center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content:center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position:relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow:hidden;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.half {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex:1 1 50%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>min-width:50%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height:100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display:flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items:center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content:center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position:relative;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.left {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(160deg, var(--pink1), var(--pink2));</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.right {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(160deg, var(--blue-dk), var(--blue-acc));</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Center content box (over both halves) */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.center {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>left:50%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: translateX(-50%);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display:flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-direction:column;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items:center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap:18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: min(calc(var(--max-width) - 40px), 92%);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 28px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 20px 50px rgba(2,6,23,0.5);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index:10;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align:center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Brand styling: big word with halves colored appropriately */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight:800;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.02em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height:1;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(48px, 10vw, 120px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display:flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items:center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content:center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* The left-part (kor): placed with pink background behind it */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand .kor {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 10px 0 0 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--blue-dk); /* dark-blue text on pink */</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: transparent; /* transparent cause left side itself is pink */</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display:inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: translateX(-6px);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* The right-part (ita): white text on blue */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand .ita {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 0 10px 10px 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--white);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: transparent; /* right side is blue */</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display:inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: translateX(6px);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Subtext / niche and coming soon */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.niche {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(14px, 2vw, 18px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.9);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0.95;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top:6px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform:uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.18em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight:600;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.coming {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(12px, 1.6vw, 14px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.85);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top:4px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight:500;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing:0.18em;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Make brand background match halves so kor appears on pink and ita on blue */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* We'll use pseudo-elements to create subtle colored blocks behind the word halves */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand .kor::before,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand .ita::before{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>content: "";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position:absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 70%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>left:0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>top:15%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index:-1;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius:12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>filter: blur(10px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>opacity:0.12;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand .kor::before{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(90deg, rgba(255,255,255,0.0), rgba(255,255,255,0.0));</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand .ita::before{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(90deg, rgba(0,0,0,0.0), rgba(0,0,0,0.0));</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Responsive tweaks */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width:720px){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.center { padding:20px; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.brand { font-size: clamp(36px, 14vw, 64px); }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.brand .kor, .brand .ita { padding:6px 12px; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.niche { font-size:13px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Accessibility: ensure contrast by adding subtle stroke to text parts */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand .kor { text-shadow: 0 1px 0 rgba(255,255,255,0.04); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand .ita { text-shadow: 0 1px 0 rgba(0,0,0,0.12); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* small footer note */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.meta {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top:10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size:12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: rgba(255,255,255,0.6);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="split" role="main" aria-labelledby="brandHeading"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="half left" aria-hidden="true"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="half right" aria-hidden="true"&gt;&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="center" id="brandHeading" aria-live="polite"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="brand" aria-hidden="false"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="kor"&gt;kor&lt;/span&gt;&lt;span style="width:8px;"&gt;&lt;/span&gt;&lt;span class="ita"&gt;ita&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="niche"&gt;Niche: Creative Product Design&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="coming"&gt;COMING SOON&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="meta"&gt;Want updates? Email &lt;strong&gt;priyanshu@koritanow.com&lt;/strong&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <div class="split" role="main" aria-labelledby="brandHeading">
+    <div class="half left" aria-hidden="true"></div>
+    <div class="half right" aria-hidden="true"></div>
+
+    <div class="center" id="brandHeading" aria-live="polite">
+      <div class="brand" aria-hidden="false">
+        <span class="kor">kor</span><span style="width:8px;"></span><span class="ita">ita</span>
+      </div>
+
+      <div class="niche">Niche: Creative Product Design</div>
+      <div class="coming">COMING SOON</div>
+
+      <div class="meta">Want updates? Email <strong>priyanshu@koritanow.com</strong></div>
+    </div>
+  </div>
 </body>
 </html>
+
