@@ -79,24 +79,23 @@
       letter-spacing: 0.12em;
     }
 
-    /* updates section styled same as coming soon */
+    /* Updates section - slightly smaller, only W capital */
     .meta {
-      font-size: clamp(28px, 6vw, 64px);
-      font-weight: 900;
+      font-size: clamp(20px, 4vw, 36px); /* smaller than COMING SOON */
+      font-weight: 700;
       color: white;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+      text-transform: none; /* keep original case */
       line-height: 1.4;
     }
     .meta strong {
-      font-weight: 900;
+      font-weight: 800;
     }
 
     @media (max-width:720px){
       .center { padding:20px; }
       .brand { font-size: clamp(36px, 14vw, 64px); }
       .coming { font-size: clamp(22px, 10vw, 40px); }
-      .meta { font-size: clamp(22px, 10vw, 40px); }
+      .meta { font-size: clamp(16px, 5vw, 24px); }
       .tagline { font-size: clamp(14px, 5vw, 20px); }
     }
   </style>
